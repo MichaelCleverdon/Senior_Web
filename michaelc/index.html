@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Michael's Basic Webpage</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/animated.js"></script>
+    <!--
+
+
+  font-family: 'Macondo', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Gamja Flower', cursive;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Comfortaa', cursive;
+
+  -->
+
+  </head>
+
+
+  <body>
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+      <a href="http://westada.tech/b2/johnh" class="w3-bar-item w3-button">John H</a>
+      <a href="http://westada.tech/b2/briellel" class="w3-bar-item w3-button">Brielle L</a>
+      <a href="http://westada.tech/b2/hunterf" class="w3-bar-item w3-button">Hunter F</a>
+    </div>
+    <div id="master">
+
+      <div id="header">
+
+        <div style="float: left; padding: 150px">
+
+          <h4>Created by Michael C</h4>
+          <h5>Last Edited on 10/15/18</h5>
+          <h3 style="color: orange">Click here to see my team</h3>
+  <button class="w3-button w3-amber w3-xlarge" onclick="w3_open()">☰</button>
+        </div>
+        <a href="http://westada.org" target="_blank" style="padding-top: 100px;"><img id="westada"src="logos/West_Ada-06.png" height="30%" width="40%" alt="westada" /></a>
+      </div>
+      <div id="lsidebar">
+        <a href="http://westada.org/rmhs" target="_blank"><img id="rockyimg" src="logos/logo_rockybear-05.png" height="80%" width="100%" /></a>
+        <p class="sidebar">I attend Rocky Mountain. It is my home high school where I am on my last year of highschool. I can't wait to get out and start working in the Computer Science field.</p>
+      </div>
+      <div id="main3">
+        <h4>For both classes I had to create a virtual machine so I could have my own computer to work with. <a href="pages/vm.html">Here's how I did it</a></h4>
+
+      </div>
+<div id="main">
+<h2><strong>This section is for Computer Science</strong></h2>
+<div class="sec1">
+  <ul>
+    <li><a href="http://www.github.com/MichaelCleverdon">This </a> is a link to my github page. It has all of my projects from this year and last year.</li>
+  </ul>
+</div>
+
+
+
+</div>
+<div id="main2">
+  <h2><strong>This section is for Web Design</strong></h2>
+  <div class="sec1">
+    <ul>
+      <li><a href="pages/snapshot.html"><p>This</a> is how I created a snapshot before I installed MySQL</p></li>
+
+      <li><a href="pages/mysql.html"><p>This</a> is how I installed MySQL, Phpmyadmin, and MySQLWorkbench.</p></li>
+      <li><a href="pages/nodejs.html"><p>This</a> is how I installed NodeJS.</p></li>
+      <li><a href="pages/joins.html"><p>This</a> is how I did MySQL joins in NodeJS.</p></li>
+      <li><a href="pages/mongo.html"><p>This</a> is what I've learned so far in MongoDB.</p></li>
+      <li><a href="pages/compass.html"><p>This</a> is what how I installed Compass for MongoDB.</p></li>
+      <li><a href="pages/mongo_sweets.html"><p>This</a> is what how completed the Sweetscomplete project.</p></li>
+    </ul>
+  </div>
+</div>
+
+      <!-- Here is where to start copying for another project-->
+          <div id="rsidebar">
+        <a href="http://westada.org/chs" target="_blank"><img id="centennialimg" src="logos/logo_centennial-04.png" height="80%" width="100%" /></a>
+        <p class="sidebar">I travel to Centennial every other day for half the day to do my computer classes, after those classes I just go home. I am currently learning Bash in my Computer Science and Networking in my Web Design Class.</p>
+      </div>
+      <div id="footer">
+        <h4>Footer</h4>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+  </body>
+
+</html>

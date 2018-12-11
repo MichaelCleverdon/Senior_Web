@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/vm.css">
+<script src="js/animated.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div id="master">
+  <div id="header">
+    <div style="float: left; padding: 150px; font-family: 'Macondo', cursive;">
+      <h4>Created by Michael C</h4>
+      <h5>Last Edited on 11/2/18</h5>
+      <h3><a href="../index.html">Back to main Page</a></h3>
+
+    </div>
+    <div style="float: right; padding: 50px; padding-top: 150px">
+      <h2>How I reverse engineered the Sweets Complete database in Mongo </h2>
+</div>
+</div>
+<div id="main2" style="padding: 0px;">
+<!--  <table border="1" style="border: 1px;text-align: center;width: 100%; border-style: ridge;font-size: 16px;font-family: 'Montserrat', sans-serif;">
+    <tr>
+      <td></td>
+      <td><img src="" height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src=""height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src="" height="" width="" alt=""></td>
+    </tr>
+
+  </table> -->
+  <h3>  These are my notes from Mongo. Soon to be in picture and comment version like all the other pages.</h3>
+  <pre style="padding: 5px">
+    ######## Starting Processes ########
+
+    show dbs;
+    sweetscomplete
+
+    use sweetscomplete;
+
+    db.createCollection("products");
+
+    show collections;
+    products
+
+
+    ######### Actual Commands used to do data manipulation #########
+
+    #Example Insert
+      db.products.insert({"sku": "C21000", "title" : "Chocolate Eclair", "description" : "Yummy chocolate center with sweet bread outer", "price" : 2.00 });
+    #Example Insert of Array
+      db.products.insert(
+        [
+          {"sku" : "C30000", "title" : "Chocolate Mousse", "description" : "Creamy chocolate pudding type dessert", "price" : 3 },
+          {"sku" : "C35000", "title" : "Custard Donut", "description" : "Donut with a custard center", "price" : 4 },
+          {"sku" : "C30000", "title" : "Chocolate Mousse", "description" : "Creamy chocolate pudding type dessert", "price" : 3 },
+          {"sku" : "C22000","title" : "Chocolate Toaster Tarts","description":"Chocolate tarts that you can toast in a toaster","price":2.2},
+          {"sku" : "C36000","title" : "Chocolate Lava Cake","description":"Hot chocolate cake with vanilla ice cream on top","price":9.6},
+          {"sku" : "C15000","title" : "Chocolate Sprinkle","description":"A single sprinkle","price":0.05},
+          {"sku" : "C16000","title":"Chocolate Cake","description":"Entire Costco chocolate cake","price":9.5},
+          {"sku" : "M45000","title":"Chocolate Bunny","description":"Nestle chocolate bunny","price":1.99},
+          {"sku" : "C32000","title":"Chocolate Fondue","description":"Chocolate edible decoration","price":3.2},
+          {"sku" : "C61000","title":"Chocolate Layer Cake","description":"Multilayer cake with chocolate filling and chocolate cake","price":6.1},
+          {"sku" : "M43000","title":"Mint Chocolate Milk Shake","description":"Chocolate Milk Shake with a Mint shot to give it a green color","price":4.3}
+        ]
+      );
+
+    #Standard findAll
+      db.products.find({},{_id:0, description:0})
+
+    #Find with filters
+      #Only products with 'chocolate' in their name (upper and lower case becuase of 'i')
+        db.products.find({title:/chocolate/i});
+
+      #Price strictly less than 4 but greater than or equal to 3
+        db.products.find({ price:{$lt:4, $gte:3}});
+
+
+    ## Here's a find while going through it step by step
+      #Start the find after using the database and collection that you need
+        db.products.find(
+
+        #Add a filter in order to narrow your search to what you need
+          {price:{$gt:2, $lt:5}},
+
+        #Add a projection to get rid of the unnecessary data
+          {_id:0, description:0}
+
+          #Add a cursor modifier in order to find trends easier
+    ... ).sort({price:1});
+
+    ######Results######
+
+    { "sku" : "C22000", "title" : "Chocolate Toaster Tarts", "price" : 2.2 }
+    { "sku" : "C30000", "title" : "Chocolate Mousse", "price" : 3 }
+    { "sku" : "C35000", "title" : "Custard Donut", "price" : 4 }
+    { "sku" : "C48000", "title" : "Creme Brulee", "price" : 3.5 }
+    { "sku" : "C32000", "title" : "Chocolate Fondue", "price" : 3.2 }
+    { "sku" : "M43000", "title" : "Mint Chocolate Milk Shake", "price" : 4.3 }
+
+  </pre>
+</div>
+<!--
+  db.products.find(
+{price:{$gt:2, $lt:5}},
+{_id:0, description:0}
+).sort({price:1});
+-->
