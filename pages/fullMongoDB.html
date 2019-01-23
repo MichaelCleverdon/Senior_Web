@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/vm.css">
+<script src="js/animated.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div id="master">
+  <div id="header">
+    <div style="float: left; padding: 150px; font-family: 'Macondo', cursive;">
+      <h4>Created by Michael C</h4>
+      <h5>Last Edited on 11/2/18</h5>
+      <h3><a href="../index.html">Back to main Page</a></h3>
+
+    </div>
+    <div style="float: right; padding: 50px; padding-top: 150px">
+      <h2>How I did a complete database in MongoDB </h2>
+</div>
+</div>
+<div id="main2" style="padding: 0px;">
+  <pre>
+    ################## Example for inserting 1 level deep for transfer from multi-table RDBMS ##################
+      db.customers.insert({ 
+        first_name: "Michael",
+        mname: "Nick", lname: "Ford",
+        animal:[
+          {
+           species: "Dog",
+           name: "Miley",
+           gender: "f",
+           yearBorn: 2010,
+           insertedBy: 'ethana'
+          },
+          {
+           species: "Dog",
+           name: "Monkey",
+           gender: "f",
+           yearBorn: 2008,
+           insertedBy: "MichaelC"
+          }]
+        });
+
+
+        ################## Example for inserting 2 levels deep from multi-table RDBMS ##################
+      db.customers.insert({ 
+        first_name: "Michael",
+        mname: "Nick", lname: "Ford",
+        animal:[
+          {
+           species: "Dog",
+           name: "Miley",
+           gender: "f",
+           yearBorn: 2010,
+           diagnosis: [
+           {
+             date: '2017-06-22',
+             evaluation: 'Broken Collar bone from unknown accident, surgury scheduled and cone required, checkup in 2 weeks'
+           }],
+           insertedBy: 'ethana'
+          },
+          {
+           species: "Dog",
+           name: "Monkey",
+           gender: "f",
+           yearBorn: 2008,
+           insertedBy: "MichaelC"
+          }]
+        });
+
+  </pre>
+</div>

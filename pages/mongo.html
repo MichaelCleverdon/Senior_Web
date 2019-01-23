@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/vm.css">
+<script src="js/animated.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div id="master">
+  <div id="header">
+    <div style="float: left; padding: 150px; font-family: 'Macondo', cursive;">
+      <h4>Created by Michael C</h4>
+      <h5>Last Edited on 11/2/18</h5>
+      <h3><a href="../index.html">Back to main Page</a></h3>
+
+    </div>
+    <div style="float: right; padding: 50px; padding-top: 150px">
+      <h2>How I installed Mongo and use it in NodeJS </h2>
+</div>
+</div>
+<div id="main2" style="padding: 0px;">
+<!--  <table border="1" style="border: 1px;text-align: center;width: 100%; border-style: ridge;font-size: 16px;font-family: 'Montserrat', sans-serif;">
+    <tr>
+      <td></td>
+      <td><img src="" height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src=""height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src="" height="" width="" alt=""></td>
+    </tr>
+
+  </table> -->
+  <h3 style="text-align: center">These are my notes from Mongo.</h3>
+  <pre style="padding: 5px">
+    #### Delete Many ####
+
+db.customers.deleteMany({first_name: "Brielle"});
+
+### Update ###
+
+db.customers.update({first_name: "John"}, {first_name: "John", last_name: "Houston", gender:"Male"});
+
+#Works for many Johns, not just the first one
+db.customers.updateMany({first_name: "John"}, {first_name: "John", last_name: "Houston", gender:"Male"});
+
+                       $set works to keep everything the same except what is in the second curleys
+
+db.customers.update({first_name: "Brielle"}, {$set:{gender:"Female"}});
+
+
+
+
+################## Increment ##################
+
+Effectively the + version for ints in mongo
+
+$inc:{[field]:howMuchToIncrement}
+ex:
+db.customers.update({first_name: "John"}, {$inc: {age:5}});
+adds 5 to John's age
+
+########## Removing columns ##########
+
+$unset:{[column]:1}
+
+ex:
+db.customers.update({first_name: "John"}, {$unset:{age:1}};
+Removes age field for first 'John';
+
+
+######### Rename #########
+
+$rename:{"[initial_name]":"[renamed_name]"}});
+
+ex:
+db.customers.update({first_name: "John"}, {$rename:{"gender":"sex"}});
+
+
+
+##### Remove record ######
+
+db.customers.remove({first_name:"John", last_name:"Smith"});
+
+Shouldn't use name, because names can be duplicated
+
+
+
+
+######## Detailed Inserts ########
+
+
+db.customers.insert(
+#Array
+[
+#Object1
+{
+    first_name:"Troy",
+    last_name:"Makons",
+    gender:"Male",
+    age:33,
+    #Object inside object
+    address:{
+      street:"432 Essex St",
+      city: "Lawrence",
+      State:"MA"
+    },
+    memberships:["mem1", "mem2"],
+    balance:123.45
+},#end
+#Object2
+{
+    first_name:"Beth",
+    last_name:"Jenkins",
+    gender:"Female",
+    age:23,
+    address:{
+    street:"411 Blue Rd",
+    city: "Boston",
+    State:"MA"
+    },
+    memberships:["mem2", "mem3"],
+    balance:504.33
+},#end
+#Object3
+{
+    first_name:"William",
+    last_name:"Jackson",
+    gender:"Male",
+    age:43,
+    address:{
+    street:"11 Albany St",
+    city: "Boston",
+    State:"MA"
+    },
+    memberships:["mem1"],
+    balance:333.25
+},#end
+#Object4
+{
+    first_name:"Sharon",
+    last_name:"Thompson",
+    gender:"Female",
+    age:35,
+    address:{
+    street:"19 Willis St",
+    city: "Worchester",
+    State:"MA"
+    },
+    memberships:["mem1", "mem2"],
+    balance:99.99
+}#end
+]#End Array
+);#Close
+
+  </pre>
+</div>
