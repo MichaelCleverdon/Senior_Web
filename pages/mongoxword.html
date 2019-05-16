@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mongo XWord</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/vm.css">
+<script src="js/animated.js"></script>
+</head>
+<body>
+
+
+
+
+<div id="master">
+  <div id="header">
+    <div style="float: left; padding: 150px; font-family: 'Macondo', cursive;">
+      <h4>Created by Michael C</h4>
+      <h5>Last Edited on 3/15/19</h5>
+      <h3><a href="../index.html">Back to main Page</a></h3>
+
+    </div>
+    <div style="float: right; padding: 50px; padding-top: 150px">
+      <h2>How I did a Regex Crossword</h2>
+</div>
+</div>
+<div id="main2" style="padding: 0px;">
+  <table border="1" style="border: 1px;text-align: center;width: 100%; border-style: ridge;font-size: 16px;font-family: 'Montserrat', sans-serif;">
+    <tr>
+      <td><p>This is a Regular Expression crossword that we did in class. The way this works is that every box has 4 different regular expressions that it must match. Let's go over one example before the full answer</p></td>
+      <td><img src="../logos/regexxword.png" height="" width="" alt="Crossword"></td>
+    </tr>
+    <tr>
+      <td><p>I'm going to be focusing on the top left box as an example.</p><p>The first expression is <u>.*[GAF]*</u>, which searches for any number of any characters, then searches for any number of either a capital G, A, or F.</p><p>The second expression is <u>[ONE]*[SKA]</u>, which searches for any number of either O, N, or E and then searches for one of either S, K, or A.</p><p>The third expression is <u>(NF|FA|A|FN)+</u>, which searches for one or more of those groups.</p><p>The last expression is <u>.*(O|S)*</u>, which searches for zero or more of anything then searches for zero or more of either O or S</p></td>
+      <td><img src="../logos/regexxword.png" height="" width="" alt="Crossword"></td>
+    </tr>
+    <tr>
+      <td><p>This is the solved crossword that comes out to be 'NOSFERATU', a famous vampire from old movies.</p></td>
+      <td><img src="../logos/regexxword1.png" height="" width="" alt="solvedCrossword"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><img src=""height="" width="" alt=""></td>
+    </tr>
+   
+
+  </table>
+</div>
+</body>
+</html>

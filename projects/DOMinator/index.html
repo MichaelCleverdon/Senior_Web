@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dominator</title>
+    <!--Bootstrap stuff-->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--End of Bootstrap stuff-->
+    <link rel="stylesheet" type="text/css" href="../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+</head>  
+<body>
+    <h1>Finished by Michael C on May 6, 2019</h1>
+    <button class="w3-btn w3-khaki" id="MilButton" name="milTime" onClick="changeMilitaryTime()" type="button">Click here to change the clock to the American Standard</button>
+    <br>
+    <div id="clockDisplay" class="clockContainer"></div>
+    <p style="color: white">Use these buttons to manipulate the time</p>
+ <!--   <input class="w3-btn w3-cyan" type="button" value=" + " onClick="addOne()"><input class="w3-btn w3-cyan" type="button" value="Reset" onClick="reset()"><input class="w3-btn w3-cyan"type="button" value="-" onClick="minusOne()">-->
+   <h2 style="">Current skip amount:</h2>
+    <h2 style="display: inline" id="time">0</h2>
+<div id="page"></div>
+<hr class="my-4">
+<div id="wrap">
+<div class="card bg-dark m-auto w-75">
+    <h5 class="card-header text-light">
+        <span class="h1 text-warning font-italic mr-2">JavaScript</span>
+        <span class="btn btn-sm btn-danger float-right" onclick="disappear()">X</span>
+    </h5>
+    <div class="card-body row">
+        <div class="input-group">
+            <input type="text" class="col-2" placeholder="tagName">
+            <input type="text" class="col-10" placeholder="className">
+            <input type="text" class="col-3" placeholder="id">
+            <input type="text" class="col-6" placeholder="innerHTML">
+            <input type="text" class="col-3" placeholder="parent id">
+        </div>
+        <div class="btn-group mt-2">
+            <span class="btn btn-warning" onclick="create_Ele()">Create New Element</span>
+            <span class="btn btn-danger" onclick="deleteElement()">Remove Last Element</span>
+            <span class="btn btn-outline-secondary" onclick="resetForm()">Reset</span>
+        </div>
+    </div>
+    </div>
+</div>
+<p class="display-4">This is an element creator made in JavaScript using DOM. In order to make it work, you have to fill out the different fields</p>
+<hr>   
+<h3>Some examples of tagNames:</h3>
+<ul class='list-group'>
+    <li class='list-group-item'><h1>h1</h1></li>
+    <li class='list-group-item'><h2>h2</h2></li>
+    <li class='list-group-item'><div style="color: red">div (divs are containers and can have elements inserted into them after you create them)
+        <p>This is a p in the div, notice how it maintains the color of the div?</p>
+    </div></li>
+    <li class='list-group-item'><p>p</p></li>
+</ul>
+<br>
+<h3>Some examples of classNames from Bootstrap 4:</h3>
+
+<ul class='list-group'>
+    <li class='list-group-item bg-info'>bg-info (background color)</li>
+    <li class='list-group-item text-primary'>text-primary (text color)</li>
+    <li class='list-group-item border border-warning'>border border-warning (first class enables the border, second class describes color of border)</li>
+</ul>
+<h3>Different bootstap colors (replace any of the colors in the previous list with whatever colors you want to use)</h3>
+<ul class="list-group">
+    <li class="list-group-item bg-success">Success</li>
+    <li class="list-group-item bg-info">Info</li>
+    <li class="list-group-item bg-primary">Primary</li>
+    <li class="list-group-item bg-secondary">Secondary</li>
+    <li class="list-group-item bg-warning">Warning</li>
+    <li class="list-group-item bg-danger">Danger</li>
+    <li class="list-group-item bg-dark text-white">Dark</li>
+    <li class="list-group-item bg-light">Light</li>
+</ul>
+<h1>This is my code!</h1>
+<img src="./images/DOM1.png" width="690"> <br><hr><br>
+<img src="./images/DOM2.png" width="690"><br><hr><br>
+<img src="./images/DOM3.png" width="690">
+<h1>End of code</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <script src="./index.js"></script>-->
+    
+
+</body>
+<script src="./app.js"></script>
+</html>

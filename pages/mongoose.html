@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mongoose</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gamja+Flower|Indie+Flower|Josefin+Sans|Kosugi+Maru|Merienda|Noto+Serif+JP|Joti+One|Macondo|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/vm.css">
+<script src="js/animated.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div id="master">
+  <div id="header">
+    <div style="float: left; padding: 150px; font-family: 'Macondo', cursive;">
+      <h4>Created by Michael C</h4>
+      <h5>Last Edited on 11/2/18</h5>
+      <h3><a href="../index.html">Back to main Page</a></h3>
+
+    </div>
+    <div style="float: right; padding: 50px; padding-top: 150px">
+      <h2>How I got Mongoose installed and how I used it in a MERN Stack application</h2>
+</div>
+</div>
+<div id="main2" style="padding: 0px;">
+  <table border="1" style="border: 1px;text-align: center;width: 100%; border-style: ridge;font-size: 16px;font-family: 'Montserrat', sans-serif;">
+    <tr>
+      <td><p>This is the first step I took to install Mongoose and some other tools to my app.</p></td>
+      <td><img src="../logos/mongoose1.png" height="" width="" alt="mongooseInstall"></td>
+    </tr>
+    <tr>
+      <td><p>After installing the packages through NPM, I initialized the package I will be using for my app with NPM init.</p></td>
+      <td><img src="../logos/mongoose2.png"height="" width="" alt="npmInit"></td>
+    </tr>
+    <tr>
+      <td><p>Then I created my app.js file for node to read. In this file, I require the different packages I installed earlier like Mongoose, Express, and Body-Parser. Also, I require a model called Book, which is created from the <u>schema</u> in another file called Book.Model.js</p></td>
+      <td><img src="../logos/mongoose3.png" height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td><p>This is the Book.Model.js, which defines the <u>schema</u> I am going to use for this database.</p><p>As you can see, this file requires Mongoose, which is necessary to create schema. This specific schema requires that Title be a string, Author be a string, and Category be a string. After defining what the schema will be, Mongoose exports the schema as a model called 'Book'</p></td>
+      <td><img src="../logos/mongoose4.png" height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td><p>Going back to the app.js file, you can see it connects to the database named 'example' on my local machine. Then, using Express, I can get the http request and the response, which I can then use to put "Happy to be here" on my webpage.</p></td>
+      <td><img src="../logos/mongoose3.png" height="" width="" alt=""></td>
+    </tr>
+    <tr>
+      <td><p>Here is the final product, without any database integration yet</p></td>
+      <td><img src="../logos/mongoose5.png" height="" width="" alt=""></td>
+    </tr>
+  </table>
+</div>

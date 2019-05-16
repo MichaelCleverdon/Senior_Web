@@ -16,7 +16,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/clock.css">
     <script src="js/animated.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/helloMsg.js"></script>
     <!--
 
 
@@ -36,7 +39,7 @@
   </head>
 
 
-  <body>
+  <body onload="renderTime(); welcomeMsg();">
     <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
       <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
       <a href="http://westada.tech/b2/johnh" class="w3-bar-item w3-button">John H</a>
@@ -47,13 +50,21 @@
 
       <div id="header">
 
-        <div style="float: left; padding: 150px">
-
+        <div style="float: left; padding: 150px" id="top">
+          
           <h4>Created by Michael C</h4>
-          <h5>Last Edited on 12/13/18</h5>
+          <h5>Last Edited on 4/26/19</h5>
           <h3 style="color: orange">Click here to see my team</h3>
   <button class="w3-button w3-amber w3-xlarge" onclick="w3_open()">☰</button>
-        </div>
+  <button class="w3-btn w3-khaki" id="MilButton" name="milTime" onClick="changeMilitaryTime()" type="button">Click here to change the clock to the American Standard</button>
+    <br>
+    <div id="clockDisplay" class="clockContainer"></div>
+    <p style="color: white">Use these buttons to manipulate the time</p>
+    <input class="w3-btn w3-cyan" type="button" value=" + " onClick="addOne()"><input class="w3-btn w3-cyan" type="button" value="Reset" onClick="reset()"><input class="w3-btn w3-cyan"type="button" value="-" onClick="minusOne()">
+    <h2 style="display: inline">Current skip amount:</h2>
+    <h2 style="float: right" id="time">0</h2>
+    <p id="msg"></p>
+  </div>
         <a href="http://westada.org" target="_blank" style="padding-top: 100px;"><img id="westada"src="logos/West_Ada-06.png" height="50%" width="40%" alt="westada" /></a>
       </div>
       <div id="lsidebar">
@@ -68,7 +79,7 @@
 <h2><strong>This section is for Computer Science</strong></h2>
 <div class="sec1">
   <ul>
-    <li><a href="http://www.github.com/MichaelCleverdon">This </a> is a link to my github page. It has all of my projects from this year and last year.</li>
+    <li><a target="_blank" href="http://www.github.com/MichaelCleverdon">This </a> is a link to my github page. It has all of my projects from this year and last year.</li>
   </ul>
 </div>
 
@@ -88,11 +99,22 @@
       <li><a href="pages/compass.html"><p>This</a> is what how I installed Compass for MongoDB.</p></li>
       <li><a href="pages/mongo_sweets.html"><p>This</a> is what how completed the Sweetscomplete project.</p></li>
       <li><a href="pages/fullMongoDB.html"><p>This</a> is what I did to transfer my MySQL database to MongoDB<p></li>
+      <li><a href="pages/regex.html"><p>This</a> is what I did to learn Regular Expressions in MongoDB<p></li>
+      <li><a href="pages/mongoose.html"><p>This</a> is what I did to start up Mongoose to create Schema<p></li>
+      <li><a href="pages/postman.html"><p>This</a> is what we did with Postman<p></li>
+      <li><a href="pages/mongoxword.html"><p>This</a> is how I did a Regular Expression crossword<p></li>
+      <li><a href="pages/codesandbox.html"><p>This</a> is Code SandBox, the editor I used for learning React<p></li>
+      <li><a href="pages/react.html"><p>This</a> is what I did to create my first React app<p></li>
+      <li><a href="http://127.0.0.1:3000"><p>This</a> is the React app I am making without Code Sandbox<p></li>
+      <li><a href="projects/DOMTime/index.html"><p>This</a> is the project I made in order to learn DOM<p></li>
+      <li><a href="projects/DOMinator/index.html"><p>This</a> is the DOMinator, a program used to create elements from scratch using form elements<p></li>
+      <li><a href="pages/git.html"><p>This</a> is all that I've learned about Git and Github!<p></li>
+        
     </ul>
   </div>
 </div>
 
-      <!-- Here is where to start copying for another project-->
+      <!-- Here is where to start copying for another project
           <div id="rsidebar">
         <a href="http://westada.org/chs" target="_blank"><img id="centennialimg" src="logos/logo_centennial-04.png" height="80%" width="100%" /></a>
         <p class="sidebar">I travel to Centennial every other day for half the day to do my computer classes, after those classes I just go home. I am currently learning Bash in my Computer Science and Networking in my Web Design Class.</p>
@@ -116,14 +138,13 @@ function w3_close() {
     </ul>
   </div>
 </div>
-
+-->
       <!-- Here is where to start copying for another project-->
           <div id="rsidebar">
         <a href="http://westada.org/chs" target="_blank"><img id="centennialimg" src="logos/logo_centennial-04.png" height="80%" width="100%" /></a>
         <p class="sidebar">I travel to Centennial every other day for half the day to do my computer classes, after those classes I just go home. I am currently learning Bash in my Computer Science and Networking in my Web Design Class.</p>
       </div>
-      <div id="footer">
-        <h4>Footer</h4>
+      
       </div>
     </div>
     <script>
@@ -133,6 +154,8 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
+
+
 </script>
   </body>
 
